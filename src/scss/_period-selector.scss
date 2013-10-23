@@ -1,0 +1,59 @@
+@mixin period-selector {
+    .period-selector {
+        padding: $standard-border-radius 0;
+        width: 300px;
+    
+        .selector-item {
+            position: relative;
+            height: $line-height + $tight-standard-padding;
+            overflow: hidden;
+    
+            &:not(:nth-last-of-type(2)) { //.notch is the last div
+                height: $line-height + $tight-standard-padding + 1px;
+                border-bottom: 1px solid $border-gray;
+            }
+    
+            .selector-item-inner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                @include transition(left 0.2s ease-out);
+            }
+    
+            &.active {
+                .selector-item-inner {
+                    left: -100%;
+                }
+            }
+    
+            .name {
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                line-height: $line-height;
+                padding: $tight-standard-padding/2 $tight-standard-padding;
+    
+                &:hover {
+                    background-color: $blue-xlight;
+                }
+            }
+    
+            .form {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                width: 100%;
+                padding: $tight-standard-padding/2 $tight-standard-padding;
+                @include display-flex;
+                background-color: $blue-gray-xlight;
+    
+                > *:not(:last-of-type) {
+                    margin-right: $tight-standard-padding/2;
+                }
+            }
+        }
+    }
+}
