@@ -39,11 +39,11 @@ module.exports.Year = period.extend({
 module.exports.FiscalYear = period.extend({
     name: function() {
         var value = this.get('value'),
-            match = value.match(/^fiscalyear:(.+)$/);
+            match = value.match(/^fiscalyear:(.+),(.+)$/);
         if (!match) {
             return '?';
         }
-        return t('period.formatted.fiscalyear', {year: match[1]});
+        return t('period.formatted.fiscalyear', {year: match[2]});
     }.property('value')
 });
 
