@@ -52,3 +52,5 @@ module.exports = require('ember-popover').extend({
     
     itemViewClass: require('./item-view')
 });
+
+module.exports.periods = require('./periods');
