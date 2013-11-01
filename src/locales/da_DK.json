@@ -1,0 +1,13 @@
+{
+    "all_time": "Al tid",
+    "month": "Måned",
+    "quarter": "Kvartal",
+    "year": "År",
+    "fiscalyear": "Regnskabsår",
+    "dates": "Datointerval",
+    "end_date_must_be_after_start_date": "Slutdato skal være efter startdato.",
+    "required_field": "Dette felt skal udfyldes.",
+    "period.formatted.quarter": "{{quarter}} quarter {{year}}",
+    "period.formatted.year": "År {{year}}",
+    "period.formatted.fiscalyear": "Regnskabsår {{year}}"
+}

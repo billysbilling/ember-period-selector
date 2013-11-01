@@ -1,4 +1,5 @@
-var periods = require('../periods');
+var t = require('../i18n').t,
+    periods = require('../periods');
 
 module.exports = Em.View.extend({
     template: require('../../templates/period-views/month'),

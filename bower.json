@@ -4,7 +4,11 @@
   "homepage": "https://github.com/billysbilling/ember-period-selector",
   "main": "src/js/period-selector.js",
   "billy-builder": {
-    "include": ["src/js", "src/templates"]
+    "include": [
+      "src/js",
+      "src/locales",
+      "src/templates"
+    ]
   },
   "license": "MIT",
   "ignore": [
@@ -16,8 +20,9 @@
   ],
   "dependencies": {
     "ember": "billysbilling/bower-ember#master",
+    "ember-popover": "billysbilling/ember-popover#master",
+    "i81n": "billysbilling/i18n#master",
     "numeral": "1.5.0",
-    "style-guide": "billysbilling/style-guide#master",
-    "ember-popover": "billysbilling/ember-popover#master"
+    "style-guide": "billysbilling/style-guide#master"
   }
 }

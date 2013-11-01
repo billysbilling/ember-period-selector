@@ -1,4 +1,5 @@
-var numeral = require('numeral');
+var t = require('./i18n').t,
+    numeral = require('numeral');
 
 var period = Em.Object.extend({
 });

@@ -1,4 +1,5 @@
-var periods = require('../periods');
+var t = require('../i18n').t,
+    periods = require('../periods');
 
 module.exports = Em.View.extend({
     template: require('../../templates/period-views/dates'),
@@ -36,7 +37,7 @@ module.exports = Em.View.extend({
                 ok = false;
             }
             if (startDate && endDate && endDate.isBefore(startDate)) {
-                this.set('endDateError', t('period_selector.end_date_must_be_after_start_date'))
+                this.set('endDateError', t('end_date_must_be_after_start_date'))
                 ok = false;
             }
             if (ok) {
