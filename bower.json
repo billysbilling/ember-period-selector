@@ -21,7 +21,7 @@
   "dependencies": {
     "ember": "billysbilling/bower-ember#master",
     "ember-popover": "billysbilling/ember-popover#master",
-    "i81n": "billysbilling/i18n#master",
+    "i18n": "billysbilling/i18n#master",
     "numeral": "1.5.0",
     "style-guide": "billysbilling/style-guide#master"
   }
