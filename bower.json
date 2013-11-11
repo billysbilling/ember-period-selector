@@ -19,10 +19,10 @@
     "tests"
   ],
   "dependencies": {
-    "ember": "billysbilling/bower-ember#master",
-    "ember-popover": "billysbilling/ember-popover#master",
-    "i18n": "billysbilling/i18n#master",
-    "numeral": "1.5.0",
-    "style-guide": "billysbilling/style-guide#master"
+    "ember": "billysbilling/bower-ember#~1.3.0",
+    "ember-popover": "billysbilling/ember-popover#~1.0.0",
+    "i18n": "billysbilling/i18n#~1.0.0",
+    "numeral": "~1.5.0",
+    "style-guide": "billysbilling/style-guide#~1.0.0"
   }
 }
