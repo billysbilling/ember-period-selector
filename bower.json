@@ -1,6 +1,6 @@
 {
   "name": "ember-period-selector",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://github.com/billysbilling/ember-period-selector",
   "main": "src/js/period-selector.js",
   "billy-builder": {
