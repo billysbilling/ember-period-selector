@@ -1,0 +1,1 @@
+module.exports = require('i18n-context')('ember_period_selector', require.resolve('../locales'));

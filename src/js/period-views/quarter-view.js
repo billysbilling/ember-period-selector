@@ -1,4 +1,4 @@
-var t = require('../i18n').t,
+var t = require('../i18n-context').t,
     numeral = require('numeral'),
     periods = require('../periods');
 

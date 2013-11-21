@@ -1,5 +1,5 @@
-var i18n = require('./i18n'),
-    t = i18n.t;
+var i18nContext = require('./i18n-context'),
+    t = i18nContext.t;
 
 module.exports = require('ember-popover').extend({
     template: require('../templates/period-selector'),
@@ -58,4 +58,9 @@ module.exports = require('ember-popover').extend({
 
 module.exports.periods = require('./periods');
 
-module.exports.lang = i18n.lang;
+module.exports.locale = i18nContext.locale;
+
+module.exports.lang = function() {
+    console.warn('.lang() is deprecated. Use .locale() instead');
+    return i18nContext.locale.apply(null, arguments);
+};
