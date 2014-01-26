@@ -7,9 +7,9 @@ module.exports = Em.View.extend({
     classNames: ['form'],
 
     initialValueDidChange: function() {
-        var match = (this.get('initialValue.value') || '').match(/^fiscalyear:(.+)$/);
+        var match = (this.get('initialValue.value') || '').match(/^fiscalyear:(.+),(.+)$/);
         if (match) {
-            this.set('year', match[1]);
+            this.set('year', match[2]);
         } else {
             this.set('year', this.get('yearOptions.firstObject.value'));
         }
@@ -17,13 +17,13 @@ module.exports = Em.View.extend({
 
     value: function() {
         return periods.FiscalYear.create({
-            value: 'fiscalyear:'+this.get('year')
+            value: 'fiscalyear:'+this.container.lookup('controller:user').get('activeOrganization.id')+','+this.get('year')
         });
     }.property('year'),
 
     yearOptions: function() {
         var d = moment().endOf('month').startOf('day'),
-            end = this.container.lookup('route:organization').currentModel.get('firstFiscalYearStart').endOf('month'),
+            end = this.container.lookup('controller:user').get('activeOrganization.firstFiscalYearStart').endOf('month'),
             options = Em.A();
         while (d.isAfterOrSame(end)) {
             options.pushObject(Em.Object.create({
