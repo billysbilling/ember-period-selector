@@ -29,7 +29,7 @@ module.exports = Em.View.extend({
         for (var i = 1; i <= 4; i++) {
             options.push(Em.Object.create({
                 value: ''+i,
-                name: numeral(i).format('0o')+' quarter'
+                name: t('quarter.formatted', { quarter: numeral(i).format('0o') })
             }));
         }
         return options;

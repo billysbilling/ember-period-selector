@@ -2,6 +2,7 @@
     "all_time": "All time",
     "month": "Month",
     "quarter": "Quarter",
+    "quarter.formatted": "{{quarter}} quarter",
     "year": "Year",
     "fiscalyear": "Fiscal year",
     "dates": "Date interval",
