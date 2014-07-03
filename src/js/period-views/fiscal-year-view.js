@@ -22,15 +22,14 @@ module.exports = Em.View.extend({
     }.property('year'),
 
     yearOptions: function() {
-        var d = moment().endOf('month').startOf('day'),
-            end = this.container.lookup('controller:user').get('activeOrganization.firstFiscalYearStart').endOf('month'),
+        var organization = this.container.lookup('controller:user').get('activeOrganization'),
+            firstFiscalYear = organization.get('firstFiscalYearEnd').format('YYYY'),
             options = Em.A();
-        while (d.isAfterOrSame(end)) {
+        for (var y = organization.get('currentFiscalYear'); y >= firstFiscalYear; y--) {
             options.pushObject(Em.Object.create({
-                value: d.format('YYYY'),
-                name: d.format('YYYY')
+                value: y,
+                name: y
             }));
-            d = moment(d).subtract(1, 'years').endOf('month').startOf('day');
         }
         return options;
     }.property(),
