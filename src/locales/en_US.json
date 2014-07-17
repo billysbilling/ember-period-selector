@@ -4,11 +4,9 @@
     "quarter": "Quarter",
     "quarter.formatted": "{{quarter}} quarter",
     "year": "Year",
-    "fiscalyear": "Fiscal year",
     "dates": "Date interval",
     "end_date_must_be_after_start_date": "End date must be after start date.",
     "required_field": "This field is required.",
     "period.formatted.quarter": "{{quarter}} quarter {{year}}",
-    "period.formatted.year": "Year {{year}}",
-    "period.formatted.fiscalyear": "Fiscal year {{year}}"
+    "period.formatted.year": "Year {{year}}"
 }
