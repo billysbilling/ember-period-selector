@@ -2,7 +2,6 @@ var periods = require('../src/js/periods');
 
 var eventDispatcher,
     container,
-    organization,
     target,
     selector,
     selectedValue,
@@ -17,12 +16,6 @@ QUnit.module('period-selector component', {
         }, '#ember-testing');
         
         container = buildTestContainer();
-        
-        Em.run(function() {
-            organization = Billy.Organization.load({
-                firstFiscalYearStart: '2011-10-01'
-            });
-        });
         
         container.register('view:test-target', Em.View.extend({
             attributeBindings: ['style'],
@@ -40,7 +33,6 @@ QUnit.module('period-selector component', {
     teardown: function() {
         Em.run(function() {
             eventDispatcher.destroy();
-            organization.unload();
             if (selector) {
                 selector.destroy();
             }
@@ -121,18 +113,6 @@ test('Year default', function() {
     equal(selectEventCounter, 1);
     ok(selectedValue instanceof periods.Year);
     equal(selectedValue.get('value'), 'year:2012');
-});
-
-test('Fiscal year default', function() {
-    setupSelector();
-    Em.run(function() {
-        selector.set('value', periods.FiscalYear.create({value: 'fiscalyear:2012'}));
-    })
-    click('.selector-item .name', t('period_selector.fiscalyear'));
-    click('.selector-item.active .tool');
-    equal(selectEventCounter, 1);
-    ok(selectedValue instanceof periods.FiscalYear);
-    equal(selectedValue.get('value'), 'fiscalyear:2012');
 });
 
 test('Dates default', function() {

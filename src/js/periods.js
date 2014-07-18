@@ -1,10 +1,7 @@
 var t = require('./i18n-context').t,
     numeral = require('numeral');
 
-var period = Em.Object.extend({
-});
-
-module.exports.Month = period.extend({
+module.exports.Month = Em.Object.extend({
     name: function() {
         var value = this.get('value'),
             match = value.match(/^month:(.+)$/);
@@ -15,7 +12,7 @@ module.exports.Month = period.extend({
     }.property('value')
 });
 
-module.exports.Quarter = period.extend({
+module.exports.Quarter = Em.Object.extend({
     name: function() {
         var value = this.get('value'),
             match = value.match(/^quarter:(.+)-(.+)$/);
@@ -26,7 +23,7 @@ module.exports.Quarter = period.extend({
     }.property('value')
 });
 
-module.exports.Year = period.extend({
+module.exports.Year = Em.Object.extend({
     name: function() {
         var value = this.get('value'),
             match = value.match(/^year:(.+)$/);
@@ -37,18 +34,7 @@ module.exports.Year = period.extend({
     }.property('value')
 });
 
-module.exports.FiscalYear = period.extend({
-    name: function() {
-        var value = this.get('value'),
-            match = value.match(/^fiscalyear:(.+),(.+)$/);
-        if (!match) {
-            return '?';
-        }
-        return t('period.formatted.fiscalyear', {year: match[2]});
-    }.property('value')
-});
-
-module.exports.Dates = period.extend({
+module.exports.Dates = Em.Object.extend({
     name: function() {
         var value = this.get('value'),
             match = value.match(/^dates:(.+)\.\.\.(.+)$/);
