@@ -23,6 +23,6 @@
     "ember-popover": "billysbilling/ember-popover#>=1.0 <2.0",
     "i18n-context": "billysbilling/i18n-context#>=1.0 <2.0",
     "numeral": "~1.5.0",
-    "style-guide": "billysbilling/style-guide#>=1.0 <2.0"
+    "style-guide": "billysbilling/style-guide#colors"
   }
 }
