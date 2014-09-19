@@ -1,4 +1,5 @@
-var i18nContext = require('./i18n-context'),
+var Popover = require('ember-popover'),
+    i18nContext = require('./i18n-context'),
     t = i18nContext.t,
     periods = require('./periods');
 
@@ -30,7 +31,9 @@ var types = [
     })
 ];
 
-module.exports = require('ember-popover').extend({
+module.exports = Popover.extend({
+    layout: Popover.proto().layout,
+
     template: require('../templates/period-selector'),
 
     classNames: ['period-selector'],
