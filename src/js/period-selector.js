@@ -1,7 +1,8 @@
 var Popover = require('ember-popover'),
     i18nContext = require('./i18n-context'),
     t = i18nContext.t,
-    periods = require('./periods');
+    periods = require('./periods'),
+    parsePeriod = require('./parse-period');
 
 var types = [
     Em.O({
@@ -58,6 +59,8 @@ module.exports = Popover.extend({
 });
 
 module.exports.periods = periods;
+
+module.exports.parsePeriod = parsePeriod;
 
 module.exports.locale = i18nContext.locale;
 
