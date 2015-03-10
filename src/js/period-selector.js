@@ -5,29 +5,39 @@ var Popover = require('ember-popover'),
     parsePeriod = require('./parse-period');
 
 var types = [
-    Em.O({
+    Em.Object.createWithMixins({
         key: 'all',
-        name: t('all_time'),
+        name: function() {
+            return t('all_time')
+        }.property(),
         viewClass: null
     }),
-    Em.O({
+    Em.Object.createWithMixins({
         key: 'month',
-        name: t('month'),
+        name: function() {
+            return t('month')
+        }.property(),
         viewClass: require('./period-views/month-view')
     }),
-    Em.O({
+    Em.Object.createWithMixins({
         key: 'quarter',
-        name: t('quarter'),
+        name: function() {
+            return t('quarter')
+        }.property(),
         viewClass: require('./period-views/quarter-view')
     }),
-    Em.O({
+    Em.Object.createWithMixins({
         key: 'year',
-        name: t('year'),
+        name: function() {
+            return t('year')
+        }.property(),
         viewClass: require('./period-views/year-view')
     }),
-    Em.O({
+    Em.Object.createWithMixins({
         key: 'dates',
-        name: t('dates'),
+        name: function() {
+            return t('dates')
+        }.property(),
         viewClass: require('./period-views/dates-view')
     })
 ];
